@@ -3,7 +3,7 @@ function out = KPCA_denoising(dwi,mask,kernel,flag_shrinkage)
 
 % Returns out (denoised image) and noisemap (estimated noise map).
 
-% flag_shrinkage : 1, apply shrinkage, 0 normal KCPA.  Cautious, higher denoising with shrinkage but may
+% flag_shrinkage : 1, apply shrinkage, 0 normal KPCA.  Cautious, higher denoising with shrinkage but may
 % get biased estimates. 
 
 %G.Ramos Llorden 1st August 2021
@@ -16,14 +16,14 @@ N = prod(kernel);
 [nx,ny,nz,M]=size(dwi);
 out = dwi;
 
-[cSure,hSure] = optimal_sigma_rank_SURE(dwi,mask,kernel,0); %estimation of optimal c and h %This is the slowest part. can be accelerated if a less dense grid is used.
+[cSure,hSure] = optimal_sigma_rank_SURE(dwi,mask,kernel,0); %estimation of optimal c and h 
 
 
 rangey = (ky+1):(ny-ky);
 rangez = (kz+1):(nz-kz);
 rangex = (kx+1):(nx-kx);
 
-%denoising starts there, we use parfor, remove it returns errors.
+%denoising begins there, we use parfor, remove_if_errors.
 
 parfor nxx=rangex
     for nzz=rangez
