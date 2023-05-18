@@ -1,6 +1,6 @@
 function [cSure,hSure,SURE,Noisemap] = optimal_sigma_rank_SURE(Im,mask,kernel_estim,flag_shrinkage)
  %[cSure,hSure] = optimal_sigma_rank_SURE(Im,mask,kernel_estim,flag_shrinkage)
- 
+ % GRamos Llorden et al , MGH Martinos center
 addpath(genpath('./utils'))
 
 Noisemap = noise4Dhomomorphic(Im,0,2,2);
