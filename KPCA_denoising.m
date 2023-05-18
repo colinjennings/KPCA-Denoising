@@ -4,7 +4,7 @@ function out = KPCA_denoising(dwi,mask,kernel,flag_shrinkage)
 % Returns out (denoised image) and noisemap (estimated noise map).
 
 % flag_shrinkage : 1, apply shrinkage, 0 normal KPCA
-% get biased estimates. 
+
 
 %G.Ramos Llorden 1st August 2021
 
