@@ -7,7 +7,17 @@ Use:
 
 function out = KPCA_denoising(dwi,mask,kernel,flag_shrinkage)
 
-dwi: diffusion-weighted image (no b0-image)
-mask:
-kernel:
-flag_shrinkage: 
+-dwi: diffusion-weighted image (no b0-image) (nx x ny x nz x ndir)
+-mask: (nx x ny x nz)
+-kernel: kernel for denoising (odd size)
+-flag_shrinkage:  1--> Apply shrinkage ,   0--> Normal KPCA
+
+
+If you find this code useful, please cite the following papers,
+
+Ramos-Llordén G, Vegas-Sánchez-Ferrero G, Liao C, Westin CF, Setsompop K, Rathi Y. SNR-enhanced diffusion MRI with structure-preserving low-rank denoising in reproducing kernel Hilbert spaces. Magn Reson Med. 2021 Sep;86(3):1614-1632. doi: 10.1002/mrm.28752.
+
+The algorithm makes use fo the noise estimator proposed in 
+
+Aja-Fernández S, Pieciak T, Vegas-Sánchez-Ferrero G. Spatially variant noise estimation in MRI: a homomorphic approach. Med Image Anal. 2015 Feb;20(1):184-97. doi: 10.1016/j.media.2014.11.005. Epub 2014 Nov 24. PMID: 25499191.
+
