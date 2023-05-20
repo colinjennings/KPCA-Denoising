@@ -7,10 +7,10 @@ Use:
 
 function out = KPCA_denoising(dwi,mask,kernel,flag_shrinkage)
 
--dwi: diffusion-weighted image (no b0-image) (nx x ny x nz x ndir)
--mask: (nx x ny x nz)
--kernel: kernel for denoising (odd size)
--flag_shrinkage:  1--> Apply shrinkage ,   0--> Normal KPCA
+1) dwi: diffusion-weighted image (no b0-image) (nx x ny x nz x ndir)
+2) mask: (nx x ny x nz)
+3) kernel: kernel for denoising (odd size)
+4) flag_shrinkage:  1--> Apply shrinkage ,   0--> Normal KPCA
 
 
 If you find this code useful, please cite the following papers,
