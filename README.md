@@ -1,7 +1,7 @@
 # DiffusionMRIDenoisingKPCA
 "SNR-enhanced diffusion MRI with structure-preserving low-rank denoising in reproducing kernel Hilbert spaces"
 
-We exploit nonlinear redundancy of the dMRI data by means of kernel principal component analysis (KPCA), a nonlinear generalization of PCA to reproducing kernel Hilbert spaces. By mapping the signal to a high-dimensional space, a higher level of redundant information is exploited, thereby enabling better denoising than linear PCA. We implement KPCA with a Gaussian kernel, with parameters automatically selected from knowledge of the noise statistic.
+We exploit the nonlinear redundancy of the dMRI data by means of kernel principal component analysis (KPCA), a nonlinear generalization of PCA to reproducing kernel Hilbert spaces. By mapping the signal to a high-dimensional space, a higher level of redundant information is exploited, thereby enabling better denoising than linear PCA. We implement KPCA with a Gaussian kernel, with parameters automatically selected from knowledge of the noise statistic.
 
 Use:
 
@@ -25,4 +25,4 @@ Aja-Fernández S, Pieciak T, Vegas-Sánchez-Ferrero G. Spatially variant noise e
 
 
 ![Imagen 1](https://github.com/gabrll/DiffusionMRIDenoisingKPCA/assets/49204215/15ac0991-c3e0-4e3e-8882-432adbe7fd91)
-![Uploading color_FA.gif…]()
+![color_FA](https://github.com/gabrll/DiffusionMRIDenoisingKPCA/assets/49204215/abf990a7-bd2b-457b-bb46-658572309818)
