@@ -25,3 +25,4 @@ Aja-Fernández S, Pieciak T, Vegas-Sánchez-Ferrero G. Spatially variant noise e
 
 
 ![Imagen 1](https://github.com/gabrll/DiffusionMRIDenoisingKPCA/assets/49204215/15ac0991-c3e0-4e3e-8882-432adbe7fd91)
+![Uploading color_FA.gif…]()
