@@ -1,6 +1,8 @@
 function Noisemap = noise4Dhomomorphic(Im,SNR,LPF,Mode)
 
 addpath(genpath('./utils'))
+addpath(genpath('./utils/noise_map_homomorphic'))
+
 [nx,ny,nz,M]=size(Im);
 h2D = fspecial('gaussian',[nx,ny],LPF);
 h = fspecial('gaussian',[nz,1],LPF);
@@ -20,4 +22,3 @@ end
 
 
 system('rm LPF.mat')
-        

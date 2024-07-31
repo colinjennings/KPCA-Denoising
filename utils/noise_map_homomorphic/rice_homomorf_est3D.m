@@ -84,6 +84,8 @@ M1=convn(In,ones(5,5,5)./125,'same');
 % end
 
 %Homomorfic filtering-------------------
+
+
 %Gauss----------------------
 Rn=abs(In-M1);
 lRn=log(Rn.*(Rn~=0)+0.001.*(Rn==0));
