@@ -1,4 +1,4 @@
-function Noisemap = noise4Dhomomorphic(Im,SNR,LPF,Mode)
+function Noisemap = noise4Dhomomorphic(Im,SNR,LPF,Mode,temp_lpf)
 
 addpath(genpath('./utils'))
 addpath(genpath('./utils/noise_map_homomorphic'))
@@ -12,13 +12,13 @@ for nzz=1:nz
 end 
    
 h3D=h3D./max(h3D(:));
-save('LPF.mat','h3D');
+save(temp_lpf,'h3D');
 
 
 for ndir = 1:M
-    [MapGaussian]=rice_homomorf_est3D(squeeze(Im(:,:,:,ndir)),SNR,LPF,Mode);
+    [MapGaussian]=rice_homomorf_est3D(squeeze(Im(:,:,:,ndir)),SNR,LPF,Mode,temp_lpf);
     Noisemap(:,:,:,ndir) = MapGaussian;
 end
 
 
-system('rm LPF.mat')
+system(['rm ', temp_lpf]);

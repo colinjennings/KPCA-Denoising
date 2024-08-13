@@ -1,9 +1,9 @@
-function [cSure,hSure,SURE,Noisemap] = optimal_sigma_rank_SURE(Im,mask,kernel_estim,flag_shrinkage)
+function [cSure,hSure,SURE,Noisemap] = optimal_sigma_rank_SURE(Im,mask,kernel_estim,flag_shrinkage,temp_lpf)
  %[cSure,hSure] = optimal_sigma_rank_SURE(Im,mask,kernel_estim,flag_shrinkage)
  % GRamos Llorden et al , MGH Martinos center
 addpath(genpath('./utils'))
 
-Noisemap = noise4Dhomomorphic(Im,0,2,2);
+Noisemap = noise4Dhomomorphic(Im,0,2,2,temp_lpf);
 %noise = min(Noisemap,[],4);
 noise = mean(Noisemap,4);
 kernel_estim = kernel_estim + (mod(kernel_estim, 2)-1);   % needs to be odd.

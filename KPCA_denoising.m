@@ -1,4 +1,4 @@
-function out = KPCA_denoising(dwi,mask,kernel,flag_shrinkage)
+function out = KPCA_denoising(dwi,mask,kernel,flag_shrinkage,temp_lpf)
 % Returns out (denoised image) and noisemap (estimated noise map).
 % flag_shrinkage : 1, apply shrinkage, 0 normal KPCA
 
@@ -13,7 +13,7 @@ N = prod(kernel);
 [nx,ny,nz,M]=size(dwi);
 out = dwi;
 
-[cSure,hSure] = optimal_sigma_rank_SURE(dwi,mask,kernel,0); %estimation of optimal c and h 
+[cSure,hSure] = optimal_sigma_rank_SURE(dwi,mask,kernel,0,temp_lpf); %estimation of optimal c and h 
 
 
 rangey = (ky+1):(ny-ky);

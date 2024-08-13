@@ -1,4 +1,4 @@
-function If=lpf3(I,sigma,MODO)
+function If=lpf3(I,sigma,MODO,temp_lpf)
 %
 % LPF low pass filter of images 
 %       If=lpf(I,sigma,MODO)
@@ -29,7 +29,9 @@ MODO=1;
 %MODO==1 DFT
 if MODO==1
     [Mx,My,Mz]=size(I);
-    load('LPF.mat')
+
+    % load the temp file
+    load(temp_lpf)
    
     lRnF = fftshift(fftn(I));
     lRnF2=lRnF.*h3D;

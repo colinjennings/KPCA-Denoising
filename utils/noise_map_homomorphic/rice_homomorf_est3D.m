@@ -1,4 +1,4 @@
-function [MapaG]=rice_homomorf_est3D(In,SNR,LPF,Modo)
+function [MapaG]=rice_homomorf_est3D(In,SNR,LPF,Modo,temp_lpf)
 %
 % RICE_HOMOMORF_EST Noise estimation in SENSE MR 
 %  [MapaR MapaG Sigma_n2 Sigma_n]=rice_homomorf_est(In,Tipo,SNR,LPF)
@@ -89,7 +89,9 @@ M1=convn(In,ones(5,5,5)./125,'same');
 %Gauss----------------------
 Rn=abs(In-M1);
 lRn=log(Rn.*(Rn~=0)+0.001.*(Rn==0));
-LPF2=lpf3((lRn),LPF);
+
+% Pass 1 for Modo corresponding to DFT (2 is DCT)
+LPF2=lpf3((lRn),LPF,1,temp_lpf);
 Mapa2=exp(LPF2);
 MapaG=Mapa2.*2./sqrt(2).*exp(-psi(1)./2);
 
