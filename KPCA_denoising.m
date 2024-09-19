@@ -28,7 +28,7 @@ parfor nxx=rangex
                 if mask(nxx,nyy,nzz)~=0
                     X = dwi(nxx-kx:nxx+kx, nyy-ky:nyy+ky, nzz-kz:nzz+kz,:);
                     X = reshape(X, N, M); X = X';       
-                    c= cSure(nxx,nyy,nzz),
+                    c = cSure(nxx,nyy,nzz),
                     h = hSure(nxx,nyy,nzz);
                     [ Signal ] = KPCA_per_block(X, h, c, center,flag_shrinkage);
                     out(nxx,nyy,nzz,:) = Signal;

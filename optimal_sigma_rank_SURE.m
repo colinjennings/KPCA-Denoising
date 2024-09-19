@@ -1,6 +1,6 @@
 function [cSure,hSure,SURE,Noisemap] = optimal_sigma_rank_SURE(Im,mask,kernel_estim,flag_shrinkage,temp_lpf)
- %[cSure,hSure] = optimal_sigma_rank_SURE(Im,mask,kernel_estim,flag_shrinkage)
- % GRamos Llorden et al , MGH Martinos center
+
+% GRamos Llorden et al , MGH Martinos center
 addpath(genpath('./utils'))
 
 Noisemap = noise4Dhomomorphic(Im,0,2,2,temp_lpf);
@@ -39,4 +39,4 @@ end
 % Final maps
 cSure = unpatch_blocks4D(Copt_all,icenter,jcenter,kcenter, kernel_estim,[nx,ny,nz]);
 hSure = unpatch_blocks4D(Hopt_all,icenter,jcenter,kcenter, kernel_estim,[nx,ny,nz]);
-save('maps.mat','cSure','hSure','-v7.3')
+% save('maps.mat','cSure','hSure','-v7.3')
